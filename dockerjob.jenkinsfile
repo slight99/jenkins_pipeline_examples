@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'unbuntu:18.04' }
+        docker { image 'ubuntu:18.04' }
     }
     parameters {
 	string(name: 'WHAT_TO_SAY', defaultValue: 'Nothing', description: 'What do you want pipeline job to echo')
