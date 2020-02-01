@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        docker { image 'unbuntu:18.04' }
+    }
+    parameters {
+	string(name: 'WHAT_TO_SAY', defaultValue: 'Nothing', description: 'What do you want pipeline job to echo')
+    }
+    stages {
+        stage('build') {
+            steps {
+                
+                echo "${WHAT_TO_SAY}"
+            }
+        }
+    }
+}
